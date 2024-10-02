@@ -11,4 +11,5 @@
     <color name="textColor">#000000</color>
     <color name="hintColor">#808080</color>
     <color name="backgroungcolor">#1E1E1E</color>
+    <color name="textColorSecondary">#757575</color>
 </resources>

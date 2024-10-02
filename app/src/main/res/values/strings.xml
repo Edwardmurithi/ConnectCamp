@@ -26,5 +26,8 @@
     <string name="communication">Communication</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="a_brief_description_of_this_feature">A brief description of this feature.</string>
+    <string name="feature_title">Feature Title</string>
+    <string name="feature_icon">Feature Icon</string>
 
 </resources>
