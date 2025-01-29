@@ -23,9 +23,6 @@
     <string name="feedback">Feedback</string>
     <string name="home">home</string>
     <string name="profile">Profile</string>
-    <string name="communication">Communication</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="a_brief_description_of_this_feature">A brief description of this feature.</string>
     <string name="feature_title">Feature Title</string>
     <string name="feature_icon">Feature Icon</string>
@@ -54,5 +51,7 @@
     <string name="save_profile">Save Profile</string>
     <string name="upload_profile_picture">upload profile picture</string>
     <string name="profile_picture">profile picture</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
 
 </resources>

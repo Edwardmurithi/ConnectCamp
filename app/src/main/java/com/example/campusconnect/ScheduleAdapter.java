@@ -23,7 +23,7 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.Schedu
     @NonNull
     @Override
     public ScheduleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_item_schedule_card, parent, false);
+        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_schedule_card, parent, false);
         return new ScheduleViewHolder(itemView);
     }
 

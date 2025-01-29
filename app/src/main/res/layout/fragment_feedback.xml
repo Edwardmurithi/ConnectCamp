@@ -42,50 +42,51 @@
             <EditText
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="46dp"
                 android:autofillHints=""
+                android:background="@drawable/edit_text_border"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
-                android:padding="20dp"
-                android:textSize="20sp"
-                android:background="@drawable/edit_text_border"/>
+                android:padding="14dp"
+                android:textSize="14sp" />
 
             <!-- Email Input Field -->
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="54dp"
+                android:layout_marginTop="16dp"
                 android:autofillHints=""
+                android:background="@drawable/edit_text_border"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
-                android:padding="20dp"
-                android:textSize="20sp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/edit_text_border"/>
+                android:padding="14dp"
+                android:textSize="14sp" />
 
             <!-- Feedback Message Input Field -->
 
             <!-- Submit Button -->
+
             <EditText
                 android:id="@+id/editTextFeedback"
                 android:layout_width="match_parent"
-                android:layout_height="190dp"
+                android:layout_height="118dp"
                 android:layout_marginTop="16dp"
                 android:autofillHints=""
                 android:background="@drawable/edit_text_border"
                 android:hint="@string/feedback_message"
-                android:padding="20dp"
-                android:textSize="20sp"
                 android:inputType="textMultiLine"
-                android:minHeight="150dp" />
+                android:minHeight="150dp"
+                android:padding="20dp"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/submitFeedbackButton"
-                android:layout_width="match_parent"
+                android:layout_width="172dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="@color/colorPrimary"
-                android:text="@string/submit_feedback"
+                android:text="submit"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>

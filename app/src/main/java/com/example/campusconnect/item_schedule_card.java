@@ -59,6 +59,6 @@ public class item_schedule_card extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_item_schedule_card, container, false);
+        return inflater.inflate(R.layout.item_schedule_card, container, false);
     }
 }

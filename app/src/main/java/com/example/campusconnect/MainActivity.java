@@ -1,116 +1,97 @@
 package com.example.campusconnect;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
-
+import androidx.fragment.app.Fragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.core.view.GravityCompat;
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Set up the toolbar
+        // Set up Toolbar
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Initialize the DrawerLayout and ActionBarDrawerToggle
+        // Set up Drawer Layout
         drawerLayout = findViewById(R.id.drawer_layout);
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        navigationView = findViewById(R.id.navigation_view);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        // Set up Hamburger Menu Toggle
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        // Set up the NavigationView
-        NavigationView navigationView = findViewById(R.id.navigation_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        // Load the default fragment (HomeFragment)
+        // Set default fragment (Schedule)
         if (savedInstanceState == null) {
-            loadFragment(new HomeFragment());
-            navigationView.setCheckedItem(R.id.nav_home); // Set the default checked item
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new ScheduleFragment())
+                    .commit();
+            bottomNavigationView.setSelectedItemId(R.id.nav_schedules);
         }
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
-        return true;
-    }
+        // Handle Bottom Navigation Clicks
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
 
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (toggle.onOptionsItemSelected(item)) {
+            if (item.getItemId() == R.id.nav_schedules) {
+                selectedFragment = new ScheduleFragment();
+            } else if (item.getItemId() == R.id.nav_events) {
+                selectedFragment = new EventsFragment();
+            } else if (item.getItemId() == R.id.nav_news) {
+                selectedFragment = new NewsFragment();
+            } else if (item.getItemId() == R.id.nav_feedback) {
+                selectedFragment = new FeedbackFragment();
+            }
+
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, selectedFragment)
+                        .commit();
+            }
+
             return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+        });
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        Fragment fragment = null;
-        int id = item.getItemId();
+        // Handle Hamburger Menu Clicks
+        navigationView.setNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+            if (item.getItemId() == R.id.nav_profile) {
+                selectedFragment = new ProfileFragment();
+            } else if ((item.getItemId() == R.id.nav_schedules)) {
+                selectedFragment = new ScheduleFragment();
+            } else if ((item.getItemId() == R.id.nav_events)) {
+                selectedFragment = new EventsFragment();
+            } else if ((item.getItemId() == R.id.nav_news)) {
+                selectedFragment = new NewsFragment();
+            } else if ((item.getItemId() == R.id.nav_feedback)) {
+                selectedFragment = new FeedbackFragment();
+            }
 
-        // Determine which fragment to load based on the item clicked
-        if (id == R.id.nav_schedule) {
-            fragment = new ScheduleFragment();
-        } else if (id == R.id.nav_events) {
-            fragment = new EventsFragment();
-        } else if (id == R.id.nav_news) {
-            fragment = new NewsFragment();
-        } else if (id == R.id.nav_settings) {
-            fragment = new SettingsFragment();
-        } else if (id == R.id.nav_feedback) {
-            fragment = new FeedbackFragment();
-        }
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, selectedFragment)
+                        .commit();
+            }
 
-        if (fragment != null) {
-            loadFragment(fragment);
-        }
+            drawerLayout.closeDrawers();
+            return true;
+        });
 
-        drawerLayout.closeDrawer(GravityCompat.START); // Close the navigation drawer
-        return true;
-    }
-
-
-    private void loadFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragment); // Ensure correct container ID
-        fragmentTransaction.addToBackStack(null); // Add current fragment to the back stack
-
-        // Clear the back stack to avoid returning to the Welcome screen
-        fragmentManager.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
-        fragmentTransaction.commit();
-    }
-
-
-    @Override
-    public void onBackPressed() {
-        // If the drawer is open, close it
-        super.onBackPressed();
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            // Go back to Welcome screen directly
-            finish(); // This will finish the current activity and go back to the previous activity
-        }
     }
 }

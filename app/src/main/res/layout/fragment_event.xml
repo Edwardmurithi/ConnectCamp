@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:layout_marginTop="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/fragment_item_event_card" />
+            tools:listitem="@layout/item_event_card" />
 
         <!-- Placeholder if no events exist -->
         <TextView
