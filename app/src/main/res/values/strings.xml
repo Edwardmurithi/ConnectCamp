@@ -29,5 +29,11 @@
     <string name="a_brief_description_of_this_feature">A brief description of this feature.</string>
     <string name="feature_title">Feature Title</string>
     <string name="feature_icon">Feature Icon</string>
+    <string name="class_time">Class Time</string>
+    <string name="unit_name">Unit Name</string>
+    <string name="lecturer_name">Lecturer Name</string>
+    <string name="venue">Venue</string>
+    <string name="no_classes_for_today_enjoy_your_break">No classes for today. Enjoy your break!</string>
+    <string name="my_schedule">My Schedule</string>
 
 </resources>

@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.example.campusconnect"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.campusconnect"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -37,6 +37,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.recyclerview)
+    implementation(libs.coordinatorlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -47,5 +49,5 @@ dependencies {
     implementation("com.google.android.material:material:1.7.0")
     implementation("androidx.navigation:navigation-fragment:2.3.5")
     implementation("androidx.navigation:navigation-ui:2.3.5")
-
+    implementation ("com.google.android.material:material:1.8.0") // Check for the latest version
 }
