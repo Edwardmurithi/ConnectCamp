@@ -35,5 +35,24 @@
     <string name="venue">Venue</string>
     <string name="no_classes_for_today_enjoy_your_break">No classes for today. Enjoy your break!</string>
     <string name="my_schedule">My Schedule</string>
+    <string name="upcoming_events">upcoming_events</string>
+    <string name="venue_auditorium">Venue: Auditorium</string>
+    <string name="date_10th_oct_2025">Date: 10th Oct, 2025</string>
+    <string name="event_title">Event_Title</string>
+    <string name="no_events_available">no_events_available</string>
+    <string name="no_events_today">no_events_today</string>
+    <string name="no_upcoming_events">no_upcoming_events</string>
+    <string name="event_time">event_time</string>
+    <string name="event_description">event_description</string>
+    <string name="event_date">event_date</string>
+    <string name="date_time"><![CDATA[Date & Time]]></string>
+    <string name="event_name">Event Name</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="feedback_message">Feedback Message</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="upload_profile_picture">upload profile picture</string>
+    <string name="profile_picture">profile picture</string>
 
 </resources>

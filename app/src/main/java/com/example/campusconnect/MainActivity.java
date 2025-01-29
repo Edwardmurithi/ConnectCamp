@@ -68,16 +68,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         // Determine which fragment to load based on the item clicked
-        if (id == R.id.nav_home) {
-            fragment = new HomeFragment();
-        } else if (id == R.id.nav_schedule) {
+        if (id == R.id.nav_schedule) {
             fragment = new ScheduleFragment();
         } else if (id == R.id.nav_events) {
             fragment = new EventsFragment();
         } else if (id == R.id.nav_news) {
             fragment = new NewsFragment();
-        } else if (id == R.id.nav_profile) {
-            fragment = new ProfileFragment();
         } else if (id == R.id.nav_settings) {
             fragment = new SettingsFragment();
         } else if (id == R.id.nav_feedback) {

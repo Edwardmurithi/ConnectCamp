@@ -30,12 +30,10 @@ public class HomeFragment extends Fragment {
 
         itemList = new ArrayList<>();
         // Add items to the list
-        itemList.add(new HomeItem(R.drawable.baseline_home, "Home", "Manage your dashboard."));
         itemList.add(new HomeItem(R.drawable.baseline_schedule, "Schedule", "Check your class schedule."));
         itemList.add(new HomeItem(R.drawable.baseline_event, "Events", "Upcoming campus events."));
         itemList.add(new HomeItem(R.drawable.baseline_newspaper_24, "News", "Latest campus news."));
         itemList.add(new HomeItem(R.drawable.baseline_feedback_24, "Feedback", "Send us your feedback."));
-        itemList.add(new HomeItem(R.drawable.baseline_account_circle_24, "Profile", "View your profile."));
 
         adapter = new HomeAdapter(itemList);
         recyclerView.setAdapter(adapter);
